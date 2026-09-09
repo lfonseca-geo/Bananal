@@ -10,8 +10,20 @@ contact the corresponding author for data access.
 ## Pipeline order
 
 1. **Preprocessing**
-   - `R/Pre_proc_data.R` — aggregates 30-min tower data to hourly and merges with
-     ERA5, TRMM, and GRACE.
+   - `R/Pre_proc_data.R` — aggregates the tower's native 30-minute records to
+     **hourly** resolution (sum for accumulation variables such as ET and
+     precipitation, mean for the rest), leaving ERA5 at its own native hourly
+     timestamp untouched, then merges the result with ERA5, TRMM, and GRACE.
+     All downstream scripts in this pipeline operate on this hourly dataset,
+     not on the original 30-minute tower records.
+     Note: an earlier version of this script instead interpolated ERA5 *down*
+     to 30-minute resolution to match the tower's native timestamp; that
+     approach was replaced by the hourly-aggregation strategy described above.
+     A related fix worth noting: the accumulation-variable aggregation uses a
+     `sum_na_aware()` wrapper rather than plain `sum(x, na.rm = TRUE)`, because
+     the latter silently returns 0 (not NA) for an hour whose both 30-minute
+     records are missing — which would otherwise misrepresent a data gap as a
+     genuine zero observation for ET/precipitation.
    - `R/utils/metutils.R` — shared meteorological utility functions.
    - `R/grace_storage.R` — GRACE total water storage (TWS) extraction/processing.
    - `R/tower_versus_ERA5.R` — tower-vs-ERA5 daily comparison (source of Figures 3–4).
