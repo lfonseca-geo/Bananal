@@ -47,27 +47,5 @@ contact the corresponding author for data access.
    - `plot_ET_seasonal_cycle_by_year.R` — Figure 11.
    - `Fig_river_level_TWS_trend.R` — Figure 12.
 
-## Not included
-
-**Pending confirmation** (possible role in this pipeline, not yet verified — ask
-before adding):
-- `Fig5_ETOBS_ETGAM.R` — possibly Figure 5 (may overlap with `plot_LOYO_ET_comparison.R`)
-- `R/ET_hourly_density_measures.R` — possibly the source of the "12,444 hourly
-  measurements / 69.91%" daytime-window statistic (Section 2.3)
-- `R/predict_ET/predict_tET_6v2.R`, `R/FitModels/GammaDist_GAMs_hourly.R`,
-  `R/FitModels/GAM_scaleERA5toEddyFlux.R` — related GAM variants, unclear whether
-  superseded
-
-**Excluded — redundant drafts:**
-- `teste_loyo_dois_modelos.R`, `teste_predict_gams_28082026.R` — earlier drafts of
-  `predict_ET_GAM_LOYO.R` (same header/content)
-
-**Excluded — belong to other projects in the source repo (by naming/content):**
-- Anything with `_tese` in the name (thesis chapters, not this paper)
-- `R/Figures_scripts/*_second_paper.R` (a different manuscript)
-- GPP/EVI/SIF/LAI/WUE scripts, `Prophet_model/`, `GradientBoostingModels/`,
-  `R/local/`, `R/scratch/`
-
-**Never included:** `chatgpt.R` was found in the source repo containing a
-hardcoded OpenAI API key in plain text — flagged to the author for key rotation,
+penAI API key in plain text — flagged to the author for key rotation,
 not copied here under any circumstance.
