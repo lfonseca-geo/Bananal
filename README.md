@@ -46,6 +46,3 @@ contact the corresponding author for data access.
    - `plot_multipanel_ET_drivers.R` — Figure 10.
    - `plot_ET_seasonal_cycle_by_year.R` — Figure 11.
    - `Fig_river_level_TWS_trend.R` — Figure 12.
-
-penAI API key in plain text — flagged to the author for key rotation,
-not copied here under any circumstance.
